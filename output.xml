@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.9.6 on win32)" generated="20211228 16:31:55.040" rpa="false" schemaversion="2">
+<suite id="s1" name="Admin Tests" source="E:\MyCode\TestAutomation\RF_PHPTRAVELS_POM\Tests\admin_tests.robot">
+<kw name="Open With Chrome" library="login_page" type="SETUP">
+<arg>https://phptravels.net/api/admin</arg>
+<kw name="Getchrome" library="driver_initiator">
+<var>${driver}</var>
+<msg timestamp="20211228 16:31:55.295" level="INFO">
+</msg>
+<msg timestamp="20211228 16:31:55.295" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20211228 16:31:55.309" level="INFO">Current google-chrome version is 96.0.4664</msg>
+<msg timestamp="20211228 16:31:55.309" level="INFO">Get LATEST chromedriver version for 96.0.4664 google-chrome</msg>
+<msg timestamp="20211228 16:31:55.479" level="INFO">Driver [E:\MyCode\TestAutomation\RF_PHPTRAVELS_POM\drivers\chromedriver\win32\96.0.4664.45\chromedriver.exe] found in cache</msg>
+<msg timestamp="20211228 16:31:55.479" level="INFO">E:\MyCode\TestAutomation\RF_PHPTRAVELS_POM\drivers\chromedriver\win32\96.0.4664.45\chromedriver.exe</msg>
+<msg timestamp="20211228 16:31:55.479" level="INFO">====== WebDriver manager ======
+Current google-chrome version is 96.0.4664
+Get LATEST chromedriver version for 96.0.4664 google-chrome
+Driver [E:\MyCode\TestAutomation\RF_PHPTRAVELS_POM\drivers\chromedriver\win32\96.0.4664.45\chromedriver.exe] found in cache</msg>
+<msg timestamp="20211228 16:31:55.479" level="INFO">${driver} = E:\MyCode\TestAutomation\RF_PHPTRAVELS_POM\drivers\chromedriver\win32\96.0.4664.45\chromedriver.exe</msg>
+<status status="PASS" starttime="20211228 16:31:55.294" endtime="20211228 16:31:55.480"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${driver}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20211228 16:31:55.480" level="INFO">E:\MyCode\TestAutomation\RF_PHPTRAVELS_POM\drivers\chromedriver\win32\96.0.4664.45\chromedriver.exe</msg>
+<status status="PASS" starttime="20211228 16:31:55.480" endtime="20211228 16:31:55.480"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${CHROME}</arg>
+<arg>executable_path=${driver}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211228 16:31:55.480" level="INFO">Opening browser 'Chrome' to base url 'https://phptravels.net/api/admin'.</msg>
+<status status="PASS" starttime="20211228 16:31:55.480" endtime="20211228 16:32:00.623"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211228 16:32:00.623" endtime="20211228 16:32:00.735"/>
+</kw>
+<status status="PASS" starttime="20211228 16:31:55.294" endtime="20211228 16:32:00.735"/>
+</kw>
+<test id="s1-t1" name="Admin URL">
+<kw name="Type Email" library="login_page">
+<arg>admin@phptravels.com</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${USEREMAIL}</arg>
+<arg>${useremailid}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211228 16:32:00.737" level="INFO">Typing text 'admin@phptravels.com' into text field 'name: email'.</msg>
+<status status="PASS" starttime="20211228 16:32:00.736" endtime="20211228 16:32:00.791"/>
+</kw>
+<status status="PASS" starttime="20211228 16:32:00.736" endtime="20211228 16:32:00.791"/>
+</kw>
+<kw name="Type Password" library="login_page">
+<arg>${PASSWORD}</arg>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${USERPASS}</arg>
+<arg>${userpw}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20211228 16:32:00.792" level="INFO">Typing password into text field 'name: password'.</msg>
+<msg timestamp="20211228 16:32:00.822" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20211228 16:32:00.853" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20211228 16:32:00.792" endtime="20211228 16:32:00.853"/>
+</kw>
+<status status="PASS" starttime="20211228 16:32:00.791" endtime="20211228 16:32:00.853"/>
+</kw>
+<kw name="Click Login" library="login_page">
+<arg>Dashboard</arg>
+<arg>${DASHBOARD_CONFIRM}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOGINBTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211228 16:32:00.854" level="INFO">Clicking element 'xpath: //*[@type='submit']//*[text()='Login']'.</msg>
+<status status="PASS" starttime="20211228 16:32:00.854" endtime="20211228 16:32:00.896"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${next_page}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211228 16:32:00.896" endtime="20211228 16:32:04.440"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${text_assert}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20211228 16:32:04.452" level="INFO">Current page contains text 'Dashboard'.</msg>
+<status status="PASS" starttime="20211228 16:32:04.440" endtime="20211228 16:32:04.452"/>
+</kw>
+<status status="PASS" starttime="20211228 16:32:00.853" endtime="20211228 16:32:04.452"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Dashboard</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20211228 16:32:04.456" level="INFO">Page title is 'Dashboard'.</msg>
+<status status="PASS" starttime="20211228 16:32:04.452" endtime="20211228 16:32:04.456"/>
+</kw>
+<status status="PASS" starttime="20211228 16:32:00.735" endtime="20211228 16:32:04.457"/>
+</test>
+<test id="s1-t2" name="Go To Quick Bookings Page">
+<kw name="Click Bookings Btn" library="admin_dashboard_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BOOKINS_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211228 16:32:04.459" level="INFO">Clicking element 'xpath: //button[@type='submit']//*[contains(text(), 'Bookings')]'.</msg>
+<status status="PASS" starttime="20211228 16:32:04.459" endtime="20211228 16:32:05.389"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${ADD_BOOKINGS_BTN}</arg>
+<arg>15</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211228 16:32:05.390" endtime="20211228 16:32:05.414"/>
+</kw>
+<status status="PASS" starttime="20211228 16:32:04.458" endtime="20211228 16:32:05.414"/>
+</kw>
+<kw name="Click Add Bookings Btn" library="admin_dashboard_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ADD_BOOKINGS_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211228 16:32:05.415" level="INFO">Clicking element 'xpath: //*[contains(text(), 'Add Booking')]'.</msg>
+<status status="PASS" starttime="20211228 16:32:05.414" endtime="20211228 16:32:07.497"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${QUICK_BOOKING_TEXT}</arg>
+<arg>15</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211228 16:32:07.497" endtime="20211228 16:32:07.515"/>
+</kw>
+<status status="PASS" starttime="20211228 16:32:05.414" endtime="20211228 16:32:07.515"/>
+</kw>
+<status status="PASS" starttime="20211228 16:32:04.458" endtime="20211228 16:32:07.516"/>
+</test>
+<test id="s1-t3" name="Book A Hotel">
+<kw name="Select Hotel Service" library="admin_quick_bookings">
+<arg>Hotels</arg>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${SERVICE_TYPE}</arg>
+<arg>${hotel}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20211228 16:32:07.518" level="INFO">Selecting options from selection list 'id: servicetype' by value Hotels.</msg>
+<status status="PASS" starttime="20211228 16:32:07.518" endtime="20211228 16:32:07.570"/>
+</kw>
+<status status="PASS" starttime="20211228 16:32:07.518" endtime="20211228 16:32:07.571"/>
+</kw>
+<kw name="Select Customer Type" library="admin_quick_bookings">
+<arg>registered</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CUSTOMER_TYPE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211228 16:32:07.571" endtime="20211228 16:32:07.589"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${CUSTOMER_TYPE}</arg>
+<arg>${reg_or_guest}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20211228 16:32:07.589" level="INFO">Selecting options from selection list 'id: selusertype' by value registered.</msg>
+<status status="PASS" starttime="20211228 16:32:07.589" endtime="20211228 16:32:07.619"/>
+</kw>
+<status status="PASS" starttime="20211228 16:32:07.571" endtime="20211228 16:32:07.620"/>
+</kw>
+<kw name="Customer Email" library="admin_quick_bookings">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${customer_email_txt}</var>
+<arg>${CUSTOMER_EMAIL}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20211228 16:32:07.638" level="INFO">${customer_email_txt} = Demo User - user@phptravels.com</msg>
+<status status="PASS" starttime="20211228 16:32:07.620" endtime="20211228 16:32:07.638"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${customer_email_txt}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20211228 16:32:07.639" level="INFO">Demo User - user@phptravels.com</msg>
+<status status="PASS" starttime="20211228 16:32:07.639" endtime="20211228 16:32:07.639"/>
+</kw>
+<status status="PASS" starttime="20211228 16:32:07.620" endtime="20211228 16:32:07.639"/>
+</kw>
+<kw name="Input From Date" library="admin_quick_bookings">
+<arg>03/01/2022</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${FROM_DATE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211228 16:32:07.640" endtime="20211228 16:32:08.690"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${FROM_DATE}</arg>
+<arg>${input_date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211228 16:32:08.691" level="INFO">Typing text '03/01/2022' into text field 'xpath: //*[contains(@class, 'checkinlabel')]//*[@id='Hotels']'.</msg>
+<status status="PASS" starttime="20211228 16:32:08.690" endtime="20211228 16:32:08.786"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LBL_CHECKOUT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211228 16:32:08.787" level="INFO">Clicking element 'xpath: //*[text()='Check-Out ']'.</msg>
+<status status="PASS" starttime="20211228 16:32:08.787" endtime="20211228 16:32:09.569"/>
+</kw>
+<status status="PASS" starttime="20211228 16:32:07.639" endtime="20211228 16:32:09.569"/>
+</kw>
+<kw name="Input To Date" library="admin_quick_bookings">
+<arg>04/01/2022</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${TO_DATE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211228 16:32:09.570" endtime="20211228 16:32:09.587"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${TO_DATE}</arg>
+<arg>${input_date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211228 16:32:09.587" level="INFO">Typing text '04/01/2022' into text field 'xpath: //*[@class='form-group']//*[@name='checkout']'.</msg>
+<status status="PASS" starttime="20211228 16:32:09.587" endtime="20211228 16:32:09.672"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LBL_CHECKOUT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211228 16:32:09.672" level="INFO">Clicking element 'xpath: //*[text()='Check-Out ']'.</msg>
+<status status="PASS" starttime="20211228 16:32:09.672" endtime="20211228 16:32:09.700"/>
+</kw>
+<status status="PASS" starttime="20211228 16:32:09.569" endtime="20211228 16:32:09.700"/>
+</kw>
+<kw name="Select Hotel Name" library="admin_quick_bookings">
+<arg>Rendezvous Hotels</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SELECT_HOTEL}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211228 16:32:09.701" endtime="20211228 16:32:09.722"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211228 16:32:10.723" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211228 16:32:09.722" endtime="20211228 16:32:10.723"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>${SELECT_HOTEL}</arg>
+<arg>${hotel_name}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211228 16:32:10.723" level="INFO">Selecting options from selection list 'xpath: //*[text()='Hotel Name']/..//select' by label Rendezvous Hotels.</msg>
+<status status="PASS" starttime="20211228 16:32:10.723" endtime="20211228 16:32:10.773"/>
+</kw>
+<status status="PASS" starttime="20211228 16:32:09.701" endtime="20211228 16:32:10.773"/>
+</kw>
+<kw name="Select Room Type" library="admin_quick_bookings">
+<arg>One-Bedroom Apartment</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SELECT_ROOM}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211228 16:32:10.774" endtime="20211228 16:32:10.790"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211228 16:32:11.791" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211228 16:32:10.790" endtime="20211228 16:32:11.791"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>${SELECT_ROOM}</arg>
+<arg>${type_of_room}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211228 16:32:11.791" level="INFO">Selecting options from selection list 'xpath: //*[text()='Room Name']/..//select' by label One-Bedroom Apartment.</msg>
+<status status="PASS" starttime="20211228 16:32:11.791" endtime="20211228 16:32:11.838"/>
+</kw>
+<status status="PASS" starttime="20211228 16:32:10.774" endtime="20211228 16:32:11.838"/>
+</kw>
+<kw name="Select Number of Rooms" library="admin_quick_bookings">
+<arg>2</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${ROOM_COUNT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211228 16:32:11.839" endtime="20211228 16:32:11.853"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211228 16:32:13.854" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211228 16:32:11.853" endtime="20211228 16:32:13.854"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>${ROOM_COUNT}</arg>
+<arg>${room_qty}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211228 16:32:13.854" level="INFO">Selecting options from selection list 'xpath: //select[@name='roomscount']' by label 2.</msg>
+<status status="PASS" starttime="20211228 16:32:13.854" endtime="20211228 16:32:13.905"/>
+</kw>
+<status status="PASS" starttime="20211228 16:32:11.838" endtime="20211228 16:32:13.906"/>
+</kw>
+<kw name="Total Room Price" library="admin_quick_bookings">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${room_price_total}</var>
+<arg>return document.getElementById(${TOTAL_ROOM_PRICE}).value</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20211228 16:32:13.907" level="INFO">Executing JavaScript:
+return document.getElementById("totalroomprice").value
+Without any arguments.</msg>
+<msg timestamp="20211228 16:32:13.911" level="INFO">${room_price_total} = 360</msg>
+<status status="PASS" starttime="20211228 16:32:13.906" endtime="20211228 16:32:13.911"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${room_price_total}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20211228 16:32:13.911" level="INFO">360</msg>
+<status status="PASS" starttime="20211228 16:32:13.911" endtime="20211228 16:32:13.911"/>
+</kw>
+<status status="PASS" starttime="20211228 16:32:13.906" endtime="20211228 16:32:13.911"/>
+</kw>
+<kw name="Price For Rooms" library="admin_quick_bookings">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${per_night}</var>
+<arg>return document.getElementById(${PRICE_PER_NIGHT}).value</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20211228 16:32:13.912" level="INFO">Executing JavaScript:
+return document.getElementById("roomtotal").value
+Without any arguments.</msg>
+<msg timestamp="20211228 16:32:13.916" level="INFO">${per_night} = 180</msg>
+<status status="PASS" starttime="20211228 16:32:13.912" endtime="20211228 16:32:13.916"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${per_night}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20211228 16:32:13.916" level="INFO">180</msg>
+<status status="PASS" starttime="20211228 16:32:13.916" endtime="20211228 16:32:13.916"/>
+</kw>
+<status status="PASS" starttime="20211228 16:32:13.912" endtime="20211228 16:32:13.916"/>
+</kw>
+<kw name="Room Price Type" library="admin_quick_bookings">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${type_of_price}</var>
+<arg>return document.getElementById(${PRICE_TYPE}).value</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20211228 16:32:13.917" level="INFO">Executing JavaScript:
+return document.getElementById("price_type").value
+Without any arguments.</msg>
+<msg timestamp="20211228 16:32:13.920" level="INFO">${type_of_price} = By Fixed</msg>
+<status status="PASS" starttime="20211228 16:32:13.917" endtime="20211228 16:32:13.920"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${type_of_price}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20211228 16:32:13.920" level="INFO">By Fixed</msg>
+<status status="PASS" starttime="20211228 16:32:13.920" endtime="20211228 16:32:13.920"/>
+</kw>
+<status status="PASS" starttime="20211228 16:32:13.916" endtime="20211228 16:32:13.921"/>
+</kw>
+<kw name="Price With VAT" library="admin_quick_bookings">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${with_vat}</var>
+<arg>return document.getElementById(${VAT_TAX}).value</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20211228 16:32:13.921" level="INFO">Executing JavaScript:
+return document.getElementById("taxhotel").value
+Without any arguments.</msg>
+<msg timestamp="20211228 16:32:13.925" level="INFO">${with_vat} = 2</msg>
+<status status="PASS" starttime="20211228 16:32:13.921" endtime="20211228 16:32:13.925"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${with_vat}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20211228 16:32:13.926" level="INFO">2</msg>
+<status status="PASS" starttime="20211228 16:32:13.926" endtime="20211228 16:32:13.926"/>
+</kw>
+<status status="PASS" starttime="20211228 16:32:13.921" endtime="20211228 16:32:13.926"/>
+</kw>
+<kw name="Price With B2C Markup" library="admin_quick_bookings">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${with_b2c}</var>
+<arg>return document.getElementById(${B2C_MARKUP_PCT}).value</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20211228 16:32:13.927" level="INFO">Executing JavaScript:
+return document.getElementById("b2c_markup").value
+Without any arguments.</msg>
+<msg timestamp="20211228 16:32:13.930" level="INFO">${with_b2c} = 10</msg>
+<status status="PASS" starttime="20211228 16:32:13.927" endtime="20211228 16:32:13.930"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${with_b2c}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20211228 16:32:13.931" level="INFO">10</msg>
+<status status="PASS" starttime="20211228 16:32:13.930" endtime="20211228 16:32:13.931"/>
+</kw>
+<status status="PASS" starttime="20211228 16:32:13.926" endtime="20211228 16:32:13.931"/>
+</kw>
+<kw name="Select Adults" library="admin_quick_bookings">
+<arg>2</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${TOTAL_ADULTS}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211228 16:32:13.931" endtime="20211228 16:32:13.946"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211228 16:32:15.948" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211228 16:32:13.946" endtime="20211228 16:32:15.948"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>${TOTAL_ADULTS}</arg>
+<arg>${adults_cnt}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211228 16:32:15.948" level="INFO">Selecting options from selection list 'id: adultscount' by label 2.</msg>
+<status status="PASS" starttime="20211228 16:32:15.948" endtime="20211228 16:32:15.999"/>
+</kw>
+<status status="PASS" starttime="20211228 16:32:13.931" endtime="20211228 16:32:16.000"/>
+</kw>
+<kw name="Select Children" library="admin_quick_bookings">
+<arg>2</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${TOTAL_CHILDREN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211228 16:32:16.000" endtime="20211228 16:32:16.017"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211228 16:32:18.018" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211228 16:32:16.017" endtime="20211228 16:32:18.018"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>${TOTAL_CHILDREN}</arg>
+<arg>${kids_cnt}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211228 16:32:18.018" level="INFO">Selecting options from selection list 'id: childcount' by label 2.</msg>
+<status status="PASS" starttime="20211228 16:32:18.018" endtime="20211228 16:32:18.067"/>
+</kw>
+<status status="PASS" starttime="20211228 16:32:16.000" endtime="20211228 16:32:18.067"/>
+</kw>
+<kw name="Price To Be Paid" library="admin_quick_bookings">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${payment}</var>
+<arg>return document.getElementById(${DEPOSIT_AMT}).value</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20211228 16:32:18.068" level="INFO">Executing JavaScript:
+return document.getElementById("totaltopay").value
+Without any arguments.</msg>
+<msg timestamp="20211228 16:32:18.073" level="INFO">${payment} = 360</msg>
+<status status="PASS" starttime="20211228 16:32:18.068" endtime="20211228 16:32:18.073"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${payment}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20211228 16:32:18.074" level="INFO">360</msg>
+<status status="PASS" starttime="20211228 16:32:18.074" endtime="20211228 16:32:18.074"/>
+</kw>
+<status status="PASS" starttime="20211228 16:32:18.068" endtime="20211228 16:32:18.074"/>
+</kw>
+<kw name="Select Payment Mode" library="admin_quick_bookings">
+<arg>Bank Transfer</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${PAYMENT_METHOD}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211228 16:32:18.074" endtime="20211228 16:32:18.091"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211228 16:32:20.094" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211228 16:32:18.091" endtime="20211228 16:32:20.094"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>${PAYMENT_METHOD}</arg>
+<arg>${pay_mode}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211228 16:32:20.094" level="INFO">Selecting options from selection list 'xpath: //*[@name='paymethod']' by label Bank Transfer.</msg>
+<status status="PASS" starttime="20211228 16:32:20.094" endtime="20211228 16:32:20.141"/>
+</kw>
+<status status="PASS" starttime="20211228 16:32:18.074" endtime="20211228 16:32:20.142"/>
+</kw>
+<kw name="Click Book Now Button" library="admin_quick_bookings">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_BOOK_NOW}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211228 16:32:20.143" level="INFO">Clicking element 'xpath: //*[@value='Book Now']'.</msg>
+<status status="PASS" starttime="20211228 16:32:20.143" endtime="20211228 16:32:21.311"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${BOOKINGS_VIEW_PAGE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211228 16:32:21.311" endtime="20211228 16:32:21.330"/>
+</kw>
+<status status="PASS" starttime="20211228 16:32:20.142" endtime="20211228 16:32:21.330"/>
+</kw>
+<kw name="Is Dashboard_Page" library="admin_quick_bookings">
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${BOOKINGS_VIEW_PAGE}</arg>
+<arg>BOOKINGS VIEW</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20211228 16:32:21.332" level="INFO">Verifying element 'xpath: //div[text()='Bookings View']' contains exact text 'BOOKINGS VIEW'.</msg>
+<status status="PASS" starttime="20211228 16:32:21.332" endtime="20211228 16:32:21.348"/>
+</kw>
+<status status="PASS" starttime="20211228 16:32:21.332" endtime="20211228 16:32:21.348"/>
+</kw>
+<status status="PASS" starttime="20211228 16:32:07.517" endtime="20211228 16:32:21.349"/>
+</test>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20211228 16:32:21.350" endtime="20211228 16:32:23.453"/>
+</kw>
+<status status="PASS" starttime="20211228 16:31:55.041" endtime="20211228 16:32:23.453"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Admin Tests">Admin Tests</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20211228 16:31:55.282" level="ERROR">Error in file 'E:\MyCode\TestAutomation\RF_PHPTRAVELS_POM\Resources\pages\login_page.robot' on line 3: Test library 'Resources\driver_initiator.py' does not exist.</msg>
+<msg timestamp="20211228 16:31:55.285" level="ERROR">Error in file 'E:\MyCode\TestAutomation\RF_PHPTRAVELS_POM\Resources\pages\admin_dashboard_page.robot' on line 3: Test library 'Resources\driver_initiator.py' does not exist.</msg>
+<msg timestamp="20211228 16:31:55.293" level="ERROR">Error in file 'E:\MyCode\TestAutomation\RF_PHPTRAVELS_POM\Resources\pages\admin_quick_bookings.robot' on line 3: Test library 'Resources\driver_initiator.py' does not exist.</msg>
+</errors>
+</robot>

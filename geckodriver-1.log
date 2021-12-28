@@ -1,0 +1,20 @@
+1640605542792	geckodriver	INFO	Listening on 127.0.0.1:51708
+1640605545796	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51709" "-no-remote" "-profile" "C:\\Users\\Appy\\AppData\\Local\\Temp\\rust_mozprofileCDPn5a"
+1640605546737	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Appy\\AppData\\Local\\Temp\\rust_mozprofileCDPn5a\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:51709/devtools/browser/0fef0f21-718d-4b1d-8702-2429da017a86
+1640605553107	Marionette	INFO	Listening on port 51714
+1640605553574	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1640605555428	Marionette	INFO	Stopped listening on port 51714
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+console.error: PushService: 
+  stateChangeProcessEnqueue: Error transitioning state
+  Message: Error: Data is not ready.
+  Stack:
+    get data@resource://gre/modules/JSONFile.jsm:186:13
+getListeners@resource://gre/modules/PushBroadcastService.jsm:66:5
+observe@resource://gre/modules/AsyncShutdown.jsm:575:16
+
